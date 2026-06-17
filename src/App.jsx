@@ -9,12 +9,13 @@ import Footer from './sections/Footer';
 
 // Pages
 import Home from './pages/Home';
-import ServicesPage from './pages/ServicesPage';
 import WorkPage from './pages/WorkPage';
 import ProcessPage from './pages/ProcessPage';
 import AboutPage from './pages/AboutPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
+import Addon from './pages/Addon';
+import Asset from './pages/Asset';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -85,10 +86,10 @@ export default function App() {
     switch (normalizedPath) {
       case '/home':
         return <Home />;
-      case '/services':
-        return <ServicesPage onPageChange={handlePageChange} />;
-      case '/work':
-        return <WorkPage onPageChange={handlePageChange} />;
+      case '/addon':
+        return <Addon onPageChange={handlePageChange} />;
+      case '/assets':
+        return <Asset onPageChange={handlePageChange} />;
       case '/process':
         return <ProcessPage onPageChange={handlePageChange} />;
       case '/about':
