@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Cpu } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Cpu } from "lucide-react";
 
 const navItems = [
-  { name: 'Home', path: '/home' },
-  { name: 'Services', path: '/services' },
-  { name: 'Work', path: '/work' },
-  { name: 'Process', path: '/process' },
-  { name: 'About', path: '/about' },
-  { name: 'Testimonials', path: '/testimonials' },
-  { name: 'Contact', path: '/contact' },
+  { name: "Portfolio", path: "/portfolio" },
+  { name: "Assets", path: "/assets" },
+  { name: "Addon", path: "/addon" },
 ];
 
 export default function Navbar({ currentPath, onPageChange }) {
@@ -20,8 +16,8 @@ export default function Navbar({ currentPath, onPageChange }) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleNavClick = (e, path) => {
@@ -34,78 +30,96 @@ export default function Navbar({ currentPath, onPageChange }) {
     <>
       <header className="fixed top-0 left-0 w-full z-40 px-4 py-4 md:py-6 flex justify-center pointer-events-none">
         <motion.nav
-          initial={{ y: -50, opacity: 0 }}
+          initial={{ y: -40, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className={`pointer-events-auto flex items-center justify-between px-6 py-2.5 md:py-3 w-full max-w-6xl rounded-full transition-all duration-500
-            ${scrolled 
-              ? 'glass-panel shadow-[0_8px_32px_rgba(0,0,0,0.5)] border-white/10 scale-95 md:scale-100 bg-[#10151C]/80' 
-              : 'glass-panel bg-[#10151C]/40 border-white/5'
-            }
-            bg-gradient-to-b from-white/5 to-transparent
-          `}
+          transition={{ duration: 0.6 }}
+          className="
+      pointer-events-auto
+      w-full
+      max-w-5xl
+      rounded-full
+      border
+      border-[#555]
+      bg-gradient-to-b
+      from-[#3d3d3d]
+      via-[#242424]
+      to-[#111]
+      shadow-[0_8px_25px_rgba(0,0,0,.6)]
+      overflow-hidden
+"
         >
-          {/* Logo Section */}
-          <a 
-            href="/home" 
-            onClick={(e) => handleNavClick(e, '/home')} 
-            className="flex items-center gap-2 group cursor-pointer"
-          >
-            <div className="relative">
-              <Cpu size={18} className="text-[#00D4FF] group-hover:rotate-45 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-[#00D4FF]/30 blur-md rounded-full group-hover:opacity-100 opacity-0 transition-opacity" />
-            </div>
-            <span className="font-display font-bold text-sm tracking-wider uppercase bg-gradient-to-r from-white via-[#C6D3E1] to-[#6BB8FF] bg-clip-text text-transparent">
-              VORTEX // STUDIO
-            </span>
-          </a>
+          <div className="flex items-center">
+            {/* Logo */}
 
-          {/* Desktop Nav Items */}
-          <div className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => {
-              const isActive = currentPath === item.path || (currentPath === '/' && item.path === '/home');
-
-              return (
-                <a
-                  key={item.name}
-                  href={item.path}
-                  onClick={(e) => handleNavClick(e, item.path)}
-                  className={`relative text-[11px] font-mono tracking-widest uppercase py-1 px-3 transition-colors duration-300 cursor-pointer
-                    ${isActive ? 'text-white' : 'text-[#C6D3E1]/70 hover:text-white'}
-                  `}
-                >
-                  {item.name}
-                  {/* Classic Apple macOS Dock / Active Dot */}
-                  {isActive && (
-                    <motion.span
-                      layoutId="activeDot"
-                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#00D4FF] shadow-[0_0_8px_#00D4FF]"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    />
-                  )}
-                </a>
-              );
-            })}
-          </div>
-
-          {/* Start Project Action CTA */}
-          <div className="hidden md:block">
             <a
-              href="/contact"
-              onClick={(e) => handleNavClick(e, '/contact')}
-              className="relative inline-flex items-center justify-center px-4 py-1.5 rounded-full text-[10px] font-mono tracking-widest uppercase bg-white/10 hover:bg-[#00D4FF] hover:text-[#0B0F14] border border-white/10 hover:border-[#00D4FF] text-white transition-all duration-300 shadow-inner group overflow-hidden cursor-pointer"
+              href="/portfolio"
+              onClick={(e) => handleNavClick(e, "/portfolio")}
+              className="flex items-center px-6 h-12 border-r border-[#444]"
             >
-              <span className="relative z-10 font-bold">START PROJECT</span>
-            </a>
-          </div>
+              <img
+                src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=100&h=100&fit=crop&crop=center"
+                alt="Logo"
+                className="w-8 h-8 rounded-full object-cover border border-white/20"
+              />
 
-          {/* Mobile Menu Trigger */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-1.5 text-white/80 hover:text-white glass-panel rounded-full cursor-pointer"
-          >
-            {mobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
-          </button>
+              <span className="ml-3 text-xs tracking-wider font-semibold text-gray-200 uppercase">
+                Vortex
+              </span>
+            </a>
+            {/* Menu */}
+
+            <div className="flex flex-1">
+              {navItems.map((item) => {
+                const active = currentPath === item.path;
+
+                return (
+                  <a
+                    key={item.name}
+                    href={item.path}
+                    onClick={(e) => handleNavClick(e, item.path)}
+                    className={`
+              relative
+              flex-1
+              h-12
+              flex
+              items-center
+              justify-center
+              text-sm
+              font-semibold
+              tracking-wide
+              border-r
+              last:border-r-0
+              border-[#444]
+              transition-all
+              duration-300
+
+              ${
+                active
+                  ? "bg-gradient-to-b from-[#66b8ff] via-[#3483c8] to-[#1b4d88] text-white"
+                  : "bg-gradient-to-b from-[#4d4d4d] via-[#2d2d2d] to-[#1a1a1a] text-gray-300 hover:text-white hover:from-[#5d5d5d] hover:to-[#222]"
+              }
+            `}
+                  >
+                    {item.name}
+
+                    {active && (
+                      <motion.div
+                        layoutId="apple-active"
+                        className="
+                absolute
+                inset-0
+                rounded-sm
+                border
+                border-white/20
+                shadow-[0_0_18px_rgba(80,170,255,.45)]
+                "
+                      />
+                    )}
+                  </a>
+                );
+              })}
+            </div>
+          </div>
         </motion.nav>
       </header>
 
@@ -121,7 +135,9 @@ export default function Navbar({ currentPath, onPageChange }) {
           >
             <div className="flex flex-col gap-2.5">
               {navItems.map((item, idx) => {
-                const isActive = currentPath === item.path || (currentPath === '/' && item.path === '/home');
+                const isActive =
+                  currentPath === item.path ||
+                  (currentPath === "/" && item.path === "/home");
 
                 return (
                   <motion.a
@@ -132,22 +148,25 @@ export default function Navbar({ currentPath, onPageChange }) {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.05 }}
                     className={`flex items-center justify-between text-xs font-mono tracking-widest uppercase p-3 rounded-xl transition-all
-                      ${isActive 
-                        ? 'bg-white/5 text-[#00D4FF] border-l-2 border-[#00D4FF] pl-4' 
-                        : 'text-[#C6D3E1]/70 hover:bg-white/5 hover:text-white'
+                      ${
+                        isActive
+                          ? "bg-white/5 text-[#00D4FF] border-l-2 border-[#00D4FF] pl-4"
+                          : "text-[#C6D3E1]/70 hover:bg-white/5 hover:text-white"
                       }
                     `}
                   >
                     <span>{item.name}</span>
-                    {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#00D4FF] shadow-[0_0_6px_#00D4FF]" />}
+                    {isActive && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#00D4FF] shadow-[0_0_6px_#00D4FF]" />
+                    )}
                   </motion.a>
                 );
               })}
             </div>
-            
+
             <motion.a
               href="/contact"
-              onClick={(e) => handleNavClick(e, '/contact')}
+              onClick={(e) => handleNavClick(e, "/contact")}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
