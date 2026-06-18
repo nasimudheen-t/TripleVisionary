@@ -10,7 +10,7 @@ import Footer from './sections/Footer';
 // Pages
 import Home from './pages/Home';
 import WorkPage from './pages/WorkPage';
-import ProcessPage from './pages/ProcessPage';
+import PortfolioPage from './pages/PortfolioPage';
 import AboutPage from './pages/AboutPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
@@ -92,7 +92,8 @@ export default function App() {
       case '/assets':
         return <Asset onPageChange={handlePageChange} />;
       case '/process':
-        return <ProcessPage onPageChange={handlePageChange} />;
+      case '/portfolio':
+        return <PortfolioPage onPageChange={handlePageChange} />;
       case '/services':
         return <ServicesPage onPageChange={handlePageChange} />;
       case '/testimonials':
