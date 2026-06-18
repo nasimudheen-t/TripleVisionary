@@ -1,25 +1,31 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  ArrowUpRight,
-  Box,
+  Clapperboard,
+  Cuboid,
   Film,
-  Layers3,
-  Play,
-  Search,
+  Image,
+  Palette,
+  MonitorSmartphone,
   Sparkles,
-  WandSparkles,
+  Search,
+  Play,
+  ArrowUpRight,
 } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRef } from "react";
+
 import VideoModal from "../components/VideoModal";
 
 const categories = [
-  { name: "All", icon: Layers3 },
-  { name: "Video Editing", icon: Film },
-  { name: "Motion Graphics", icon: WandSparkles },
-  { name: "2D Animation", icon: Sparkles },
-  { name: "3D Animation", icon: Box },
+  { name: "VFX", icon: Sparkles },
+  { name: "3D Animation", icon: Cuboid },
+  { name: "Video Edits", icon: Film },
+  { name: "Photo Manipulation", icon: Image },
+  { name: "Graphic Designs", icon: Palette },
+  { name: "UI/UX", icon: MonitorSmartphone },
+  { name: "2D Animation", icon: Clapperboard },
 ];
-
 const projects = [
   {
     id: 1,
@@ -137,6 +143,15 @@ export default function PortfolioPage({ onPageChange }) {
     window.scrollTo(0, 0);
   }, []);
 
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    scrollRef.current?.scrollBy({
+      left: direction === "left" ? -250 : 250,
+      behavior: "smooth",
+    });
+  };
+
   const categoryCounts = useMemo(
     () =>
       projects.reduce(
@@ -214,38 +229,61 @@ export default function PortfolioPage({ onPageChange }) {
 
         <div className="sticky top-[70px] z-30 -mx-2 mt-6 rounded-2xl border border-white/10 bg-[#0B0F14]/85 p-2 shadow-2xl shadow-black/20 backdrop-blur-xl">
           <div className="flex flex-col gap-2 lg:flex-row lg:items-center">
-            <div className="scrollbar-hide flex flex-1 gap-1 overflow-x-auto">
-              {categories.map(({ name, icon: Icon }) => {
-                const isActive = activeCategory === name;
+            <div className="relative flex flex-1 items-center">
+              <button
+                onClick={() => scroll("left")}
+                className="absolute left-0 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#10151C]/90 text-white hover:bg-[#1A222D]"
+              >
+                <ChevronLeft size={16} />
+              </button>
 
-                return (
-                  <button
-                    key={name}
-                    onClick={() => setActiveCategory(name)}
-                    className="flex flex-shrink-0 cursor-pointer items-center gap-2 rounded-xl bg-white/[0.04] px-3.5 py-3 text-[11px] font-medium transition-all hover:bg-white/[0.08]"
-                  >
-                    <Icon
-                      size={13}
-                      strokeWidth={isActive ? 2.5 : 1.8}
-                      className={isActive ? "text-[#5FFEBC]" : "text-white/55"}
-                    />
+              <div
+                ref={scrollRef}
+                className="scrollbar-hide mx-10 flex gap-1 overflow-x-auto scroll-smooth"
+              >
+                {categories.map(({ name, icon: Icon }) => {
+                  const isActive = activeCategory === name;
 
-                    <span
-                      className={isActive ? "text-[#5FFEBC]" : "text-white/55"}
+                  return (
+                    <button
+                      key={name}
+                      onClick={() => setActiveCategory(name)}
+                      className="flex flex-shrink-0 cursor-pointer items-center gap-2 rounded-xl bg-white/[0.04] px-3.5 py-3 text-[11px] font-medium transition-all hover:bg-white/[0.08]"
                     >
-                      {name}
-                    </span>
+                      <Icon
+                        size={13}
+                        strokeWidth={isActive ? 2.5 : 1.8}
+                        className={
+                          isActive ? "text-[#5FFEBC]" : "text-white/55"
+                        }
+                      />
 
-                    <span
-                      className={
-                        isActive ? "text-[#5FFEBC]/70" : "text-white/25"
-                      }
-                    >
-                      {String(categoryCounts[name] || 0).padStart(2, "0")}
-                    </span>
-                  </button>
-                );
-              })}
+                      <span
+                        className={
+                          isActive ? "text-[#5FFEBC]" : "text-white/55"
+                        }
+                      >
+                        {name}
+                      </span>
+
+                      <span
+                        className={
+                          isActive ? "text-[#5FFEBC]/70" : "text-white/25"
+                        }
+                      >
+                        {String(categoryCounts[name] || 0).padStart(2, "0")}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <button
+                onClick={() => scroll("right")}
+                className="absolute right-0 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-[#10151C]/90 text-white hover:bg-[#1A222D]"
+              >
+                <ChevronRight size={16} />
+              </button>
             </div>
 
             <div className="flex gap-2 border-t border-white/10 pt-2 lg:border-l lg:border-t-0 lg:pl-2 lg:pt-0">
