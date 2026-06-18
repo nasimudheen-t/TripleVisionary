@@ -38,38 +38,38 @@ const servicesList = [
     status: "CALIBRATING_GPU",
     glowColor: "rgba(0, 212, 255, 0.15)"
   },
-  {
-    title: "CGI & Render",
-    icon: Cpu,
-    desc: "High-fidelity computer generated imagery, fluid dynamics, particles, and custom meshes.",
-    techSpecs: ["Houdini Engine", "Physically Based Rendering", "Redshift Shader Library"],
-    status: "STANDBY_NODE",
-    glowColor: "rgba(107, 184, 255, 0.15)"
-  },
-  {
-    title: "VFX Production",
-    icon: Flame,
-    desc: "Chromakey compositing, rotoscoping, digital green screen integration, and explosive effects.",
-    techSpecs: ["Nuke Compositing", "3D Camera Tracking", "Optical Flare Synthesis"],
-    status: "LIVE_BUFFER",
-    glowColor: "rgba(0, 212, 255, 0.15)"
-  },
-  {
-    title: "Product Ads",
-    icon: Target,
-    desc: "Premium commercial advertisements focusing on high-concept luxury products.",
-    techSpecs: ["Macro Photography", "Cinematic Studio Lights", "Commercial Grade LUTs"],
-    status: "SYSTEMS_ACTIVE",
-    glowColor: "rgba(198, 211, 225, 0.15)"
-  },
-  {
-    title: "Social Content",
-    icon: MessageSquare,
-    desc: "Viral Reels, Shorts, and TikTok campaigns customized to loop seamlessly.",
-    techSpecs: ["9:16 Vertical Crop", "Interactive Captions", "Rapid Export Pipeline"],
-    status: "MAX_PERFORMANCE",
-    glowColor: "rgba(107, 184, 255, 0.15)"
-  }
+  // {
+  //   title: "CGI & Render",
+  //   icon: Cpu,
+  //   desc: "High-fidelity computer generated imagery, fluid dynamics, particles, and custom meshes.",
+  //   techSpecs: ["Houdini Engine", "Physically Based Rendering", "Redshift Shader Library"],
+  //   status: "STANDBY_NODE",
+  //   glowColor: "rgba(107, 184, 255, 0.15)"
+  // },
+  // {
+  //   title: "VFX Production",
+  //   icon: Flame,
+  //   desc: "Chromakey compositing, rotoscoping, digital green screen integration, and explosive effects.",
+  //   techSpecs: ["Nuke Compositing", "3D Camera Tracking", "Optical Flare Synthesis"],
+  //   status: "LIVE_BUFFER",
+  //   glowColor: "rgba(0, 212, 255, 0.15)"
+  // },
+  // {
+  //   title: "Product Ads",
+  //   icon: Target,
+  //   desc: "Premium commercial advertisements focusing on high-concept luxury products.",
+  //   techSpecs: ["Macro Photography", "Cinematic Studio Lights", "Commercial Grade LUTs"],
+  //   status: "SYSTEMS_ACTIVE",
+  //   glowColor: "rgba(198, 211, 225, 0.15)"
+  // },
+  // {
+  //   title: "Social Content",
+  //   icon: MessageSquare,
+  //   desc: "Viral Reels, Shorts, and TikTok campaigns customized to loop seamlessly.",
+  //   techSpecs: ["9:16 Vertical Crop", "Interactive Captions", "Rapid Export Pipeline"],
+  //   status: "MAX_PERFORMANCE",
+  //   glowColor: "rgba(107, 184, 255, 0.15)"
+  // }
 ];
 
 const containerVariants = {

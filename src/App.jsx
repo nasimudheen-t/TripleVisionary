@@ -16,6 +16,7 @@ import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
 import Addon from './pages/Addon';
 import Asset from './pages/Asset';
+import ServicesPage from './pages/ServicesPage';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -92,8 +93,8 @@ export default function App() {
         return <Asset onPageChange={handlePageChange} />;
       case '/process':
         return <ProcessPage onPageChange={handlePageChange} />;
-      case '/about':
-        return <AboutPage onPageChange={handlePageChange} />;
+      case '/services':
+        return <ServicesPage onPageChange={handlePageChange} />;
       case '/testimonials':
         return <TestimonialsPage onPageChange={handlePageChange} />;
       case '/contact':

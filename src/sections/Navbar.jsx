@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 const navItems = [
   { name: "Portfolio", path: "/portfolio" },
   { name: "Assets", path: "/assets" },
+  { name: "Services", path: "/services" },
   { name: "Addon", path: "/addon" },
   { name: "Contact", path: "/contact" },
 ];
@@ -38,16 +39,15 @@ export default function Navbar({ currentPath, onPageChange }) {
   return (
     <header className="fixed top-4 left-0 w-full z-50 px-3 md:px-6 flex justify-center">
       <motion.nav
-      
         initial={{ y: -40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
         className={`
           w-full
 max-w-6xl
-h-14
+h-10
 overflow-hidden
-rounded-2xl
+rounded-xl
 border
 border-[#585858]
 bg-gradient-to-b
@@ -63,7 +63,7 @@ relative
           }
         `}
       >
-<div className="flex items-center h-15">
+        <div className="flex items-center h-10">
           {/* Logo */}
 
           <a
@@ -106,7 +106,7 @@ relative
                   className={`
                     relative
                     flex-1
-                    h-15
+                    h-10
                     flex
                     items-center
                     justify-center
@@ -119,12 +119,11 @@ relative
                     transition-all
                     duration-300
 
-                    ${
-                      active
-                        ? "text-white bg-gradient-to-b from-[#72c4ff] via-[#418bd3] to-[#1f4f88]"
-                        : "text-gray-300 bg-gradient-to-b from-[#4b4b4b] via-[#2b2b2b] to-[#171717] hover:from-[#616161] hover:to-[#222] hover:text-white"
-                    }
-                  `}
+     ${
+       active
+         ? "text-black bg-gradient-to-b from-[#5FFEBC] via-[#5FFEBC] to-[#5FFEBC]"
+         : "text-gray-300 bg-gradient-to-b from-[#4b4b4b] via-[#2b2b2b] to-[#171717] hover:from-[#616161] hover:to-[#222] hover:text-white"
+     }       `}
                 >
                   {item.name}
                   {active && (
@@ -137,18 +136,19 @@ relative
 
           {/* Mobile */}
 
-          <div
-            className="
-              md:hidden
-              flex-1
-              overflow-x-auto
-              whitespace-nowrap
-              scrollbar-hide
-              
-              
-            "
-          >
-            <div className="flex min-w-max">
+          <div className="md:hidden flex-1 h-10 overflow-hidden">
+            <div
+              className="
+      flex
+      overflow-x-auto
+     pb-5
+      overflow-y-hidden
+      scrollbar-hide
+      touch-pan-x
+      whitespace-nowrap
+      w-full
+    "
+            >
               {navItems.map((item) => {
                 const active = currentPath === item.path;
 
@@ -156,35 +156,29 @@ relative
                   <a
                     key={item.name}
                     href={item.path}
-                    // ref={active ? activeRef : null}
                     onClick={(e) => handleNavClick(e, item.path)}
                     className={`
-                      relative
-                     
-                      flex-shrink-0
-                      px-8
-                      h-15
-                      flex
-                      items-center
-                      justify-center
-                      text-sm
-                      font-medium
-                      border-r
-                      border-[#444]
-                      transition-all
-                      duration-300
+            relative
+            flex-shrink-0
+            px-5
+            py-5  
+            h-12
+            flex
+            items-center
+            justify-center
+            text-sm
+            font-medium
+            border-r
+            border-[#444]
 
-                      ${
-                        active
-                          ? "text-white bg-gradient-to-b from-[#72c4ff] via-[#418bd3] to-[#1f4f88]"
-                          : "text-gray-300 bg-gradient-to-b from-[#4b4b4b] via-[#2b2b2b] to-[#171717]"
-                      }
-                    `}
+            ${
+              active
+                ? "text-white bg-gradient-to-b from-[#72c4ff] via-[#418bd3] to-[#1f4f88]"
+                : "text-gray-300 bg-gradient-to-b from-[#4b4b4b] via-[#2b2b2b] to-[#171717]"
+            }
+          `}
                   >
                     {item.name}
-                    {active && (
-                      <div className="absolute top-0 left-0 right-0 h-[2px] bg-white/40 pointer-events-none" />
-                    )}
                   </a>
                 );
               })}
