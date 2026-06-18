@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   ArrowUpRight,
   Box,
@@ -9,129 +9,129 @@ import {
   Search,
   Sparkles,
   WandSparkles,
-} from 'lucide-react';
-import VideoModal from '../components/VideoModal';
+} from "lucide-react";
+import VideoModal from "../components/VideoModal";
 
 const categories = [
-  { name: 'All', icon: Layers3 },
-  { name: 'Video Editing', icon: Film },
-  { name: 'Motion Graphics', icon: WandSparkles },
-  { name: '2D Animation', icon: Sparkles },
-  { name: '3D Animation', icon: Box },
+  { name: "All", icon: Layers3 },
+  { name: "Video Editing", icon: Film },
+  { name: "Motion Graphics", icon: WandSparkles },
+  { name: "2D Animation", icon: Sparkles },
+  { name: "3D Animation", icon: Box },
 ];
 
 const projects = [
   {
     id: 1,
-    title: 'Midnight City',
-    subtitle: 'Cinematic brand film',
-    category: 'Video Editing',
-    image: '/assets/vfx_city.png',
-    accent: '#60E6C1',
-    year: '2026',
-    duration: '01:24',
-    format: '4K',
+    title: "Midnight City",
+    subtitle: "Cinematic brand film",
+    category: "Video Editing",
+    image: "/assets/vfx_city.png",
+    accent: "#60E6C1",
+    year: "2026",
+    duration: "01:24",
+    format: "4K",
     featured: true,
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     id: 2,
-    title: 'Future Interface',
-    subtitle: 'Product UI launch sequence',
-    category: 'Motion Graphics',
-    image: '/assets/hud_motion.png',
-    accent: '#7BD7FF',
-    year: '2026',
-    duration: '00:45',
-    format: '4K',
+    title: "Future Interface",
+    subtitle: "Product UI launch sequence",
+    category: "Motion Graphics",
+    image: "/assets/hud_motion.png",
+    accent: "#7BD7FF",
+    year: "2026",
+    duration: "00:45",
+    format: "4K",
     featured: false,
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     id: 3,
-    title: 'Aura / Form',
-    subtitle: 'Luxury product visualization',
-    category: '3D Animation',
-    image: '/assets/cgi_product.png',
-    accent: '#FFB66B',
-    year: '2025',
-    duration: '00:30',
-    format: 'CGI',
+    title: "Aura / Form",
+    subtitle: "Luxury product visualization",
+    category: "3D Animation",
+    image: "/assets/cgi_product.png",
+    accent: "#FFB66B",
+    year: "2025",
+    duration: "00:30",
+    format: "CGI",
     featured: false,
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     id: 4,
-    title: 'Signal / Noise',
-    subtitle: 'Editorial title treatment',
-    category: 'Motion Graphics',
-    image: '/assets/vfx_city.png',
-    accent: '#C99BFF',
-    year: '2025',
-    duration: '00:38',
-    format: '2K',
+    title: "Signal / Noise",
+    subtitle: "Editorial title treatment",
+    category: "Motion Graphics",
+    image: "/assets/vfx_city.png",
+    accent: "#C99BFF",
+    year: "2025",
+    duration: "00:38",
+    format: "2K",
     featured: false,
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     id: 5,
-    title: 'Little Orbit',
-    subtitle: 'Character animation short',
-    category: '2D Animation',
-    image: '/assets/hud_motion.png',
-    accent: '#FFD166',
-    year: '2025',
-    duration: '01:12',
-    format: 'HD',
+    title: "Little Orbit",
+    subtitle: "Character animation short",
+    category: "2D Animation",
+    image: "/assets/hud_motion.png",
+    accent: "#FFD166",
+    year: "2025",
+    duration: "01:12",
+    format: "HD",
     featured: false,
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     id: 6,
-    title: 'After Hours',
-    subtitle: 'Fashion campaign edit',
-    category: 'Video Editing',
-    image: '/assets/cgi_product.png',
-    accent: '#FF809F',
-    year: '2025',
-    duration: '00:52',
-    format: '4K',
+    title: "After Hours",
+    subtitle: "Fashion campaign edit",
+    category: "Video Editing",
+    image: "/assets/cgi_product.png",
+    accent: "#FF809F",
+    year: "2025",
+    duration: "00:52",
+    format: "4K",
     featured: false,
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     id: 7,
-    title: 'Chromatic Bloom',
-    subtitle: 'Abstract visual identity',
-    category: '2D Animation',
-    image: '/assets/vfx_city.png',
-    accent: '#78F0A5',
-    year: '2024',
-    duration: '00:28',
-    format: 'HD',
+    title: "Chromatic Bloom",
+    subtitle: "Abstract visual identity",
+    category: "2D Animation",
+    image: "/assets/vfx_city.png",
+    accent: "#78F0A5",
+    year: "2024",
+    duration: "00:28",
+    format: "HD",
     featured: false,
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     id: 8,
-    title: 'Material Study 01',
-    subtitle: 'Procedural product film',
-    category: '3D Animation',
-    image: '/assets/cgi_product.png',
-    accent: '#88A8FF',
-    year: '2024',
-    duration: '00:41',
-    format: 'CGI',
+    title: "Material Study 01",
+    subtitle: "Procedural product film",
+    category: "3D Animation",
+    image: "/assets/cgi_product.png",
+    accent: "#88A8FF",
+    year: "2024",
+    duration: "00:41",
+    format: "CGI",
     featured: false,
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
 ];
 
 export default function PortfolioPage({ onPageChange }) {
-  const [activeCategory, setActiveCategory] = useState('All');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [sortOrder, setSortOrder] = useState('Newest');
-  const [modal, setModal] = useState({ isOpen: false, url: '', title: '' });
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortOrder, setSortOrder] = useState("Newest");
+  const [modal, setModal] = useState({ isOpen: false, url: "", title: "" });
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -153,7 +153,7 @@ export default function PortfolioPage({ onPageChange }) {
     const query = searchQuery.trim().toLowerCase();
     const filtered = projects.filter((project) => {
       const matchesCategory =
-        activeCategory === 'All' || project.category === activeCategory;
+        activeCategory === "All" || project.category === activeCategory;
       const matchesSearch =
         !query ||
         project.title.toLowerCase().includes(query) ||
@@ -164,7 +164,9 @@ export default function PortfolioPage({ onPageChange }) {
     });
 
     return [...filtered].sort((a, b) =>
-      sortOrder === 'Oldest' ? a.year.localeCompare(b.year) : b.year.localeCompare(a.year),
+      sortOrder === "Oldest"
+        ? a.year.localeCompare(b.year)
+        : b.year.localeCompare(a.year),
     );
   }, [activeCategory, searchQuery, sortOrder]);
 
@@ -181,7 +183,7 @@ export default function PortfolioPage({ onPageChange }) {
       <div className="pointer-events-none absolute left-1/2 top-0 h-[560px] w-[900px] -translate-x-1/2 rounded-full bg-[#5FFEBC]/[0.07] blur-[140px]" />
 
       <section className="relative z-10 mx-auto max-w-6xl px-5 md:px-6">
-        <div className="grid items-end gap-8 border-b border-white/10 pb-10 md:grid-cols-[1fr_360px] md:pb-14">
+        {/* <div className="grid items-end gap-8 border-b border-white/10 pb-10 md:grid-cols-[1fr_360px] md:pb-14">
           <div>
             <div className="mb-5 flex items-center gap-3">
               <span className="h-2 w-2 rounded-full bg-[#5FFEBC] shadow-[0_0_14px_#5FFEBC]" />
@@ -208,7 +210,7 @@ export default function PortfolioPage({ onPageChange }) {
               <ArrowUpRight size={15} />
             </button>
           </div>
-        </div>
+        </div> */}
 
         <div className="sticky top-[70px] z-30 -mx-2 mt-6 rounded-2xl border border-white/10 bg-[#0B0F14]/85 p-2 shadow-2xl shadow-black/20 backdrop-blur-xl">
           <div className="flex flex-col gap-2 lg:flex-row lg:items-center">
@@ -220,16 +222,26 @@ export default function PortfolioPage({ onPageChange }) {
                   <button
                     key={name}
                     onClick={() => setActiveCategory(name)}
-                    className={`flex flex-shrink-0 cursor-pointer items-center gap-2 rounded-xl px-3.5 py-3 text-[11px] font-medium transition-all ${
-                      isActive
-                        ? 'bg-[#5FFEBC] text-[#07110E]'
-                        : 'text-white/55 hover:bg-white/[0.06] hover:text-white'
-                    }`}
+                    className="flex flex-shrink-0 cursor-pointer items-center gap-2 rounded-xl bg-white/[0.04] px-3.5 py-3 text-[11px] font-medium transition-all hover:bg-white/[0.08]"
                   >
-                    <Icon size={13} strokeWidth={isActive ? 2.5 : 1.8} />
-                    <span>{name}</span>
-                    <span className={isActive ? 'text-black/45' : 'text-white/25'}>
-                      {String(categoryCounts[name] || 0).padStart(2, '0')}
+                    <Icon
+                      size={13}
+                      strokeWidth={isActive ? 2.5 : 1.8}
+                      className={isActive ? "text-[#5FFEBC]" : "text-white/55"}
+                    />
+
+                    <span
+                      className={isActive ? "text-[#5FFEBC]" : "text-white/55"}
+                    >
+                      {name}
+                    </span>
+
+                    <span
+                      className={
+                        isActive ? "text-[#5FFEBC]/70" : "text-white/25"
+                      }
+                    >
+                      {String(categoryCounts[name] || 0).padStart(2, "0")}
                     </span>
                   </button>
                 );
@@ -261,7 +273,7 @@ export default function PortfolioPage({ onPageChange }) {
 
         <div className="mb-5 mt-10 flex items-center justify-between">
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/35">
-            {String(visibleProjects.length).padStart(2, '0')} projects found
+            {String(visibleProjects.length).padStart(2, "0")} projects found
           </p>
           <div className="h-px w-20 bg-gradient-to-r from-transparent to-white/20" />
         </div>
@@ -278,16 +290,16 @@ export default function PortfolioPage({ onPageChange }) {
                 transition={{ duration: 0.35, delay: index * 0.025 }}
                 onClick={() => openProject(project)}
                 className={`group cursor-pointer overflow-hidden rounded-[22px] border border-white/[0.09] bg-[#10151C] transition-colors hover:border-white/20 ${
-                  project.featured && activeCategory === 'All' && !searchQuery
-                    ? 'md:col-span-2'
-                    : ''
+                  project.featured && activeCategory === "All" && !searchQuery
+                    ? "md:col-span-2"
+                    : ""
                 }`}
               >
                 <div
                   className={`relative overflow-hidden ${
-                    project.featured && activeCategory === 'All' && !searchQuery
-                      ? 'aspect-[16/8]'
-                      : 'aspect-[16/10]'
+                    project.featured && activeCategory === "All" && !searchQuery
+                      ? "aspect-[16/8]"
+                      : "aspect-[16/10]"
                   }`}
                 >
                   <img
@@ -325,7 +337,10 @@ export default function PortfolioPage({ onPageChange }) {
                     </div>
                     <div className="hidden items-center gap-3 font-mono text-[9px] text-white/40 sm:flex">
                       <span>{project.year}</span>
-                      <span className="h-1 w-1 rounded-full" style={{ background: project.accent }} />
+                      <span
+                        className="h-1 w-1 rounded-full"
+                        style={{ background: project.accent }}
+                      />
                       <span>{project.duration}</span>
                     </div>
                   </div>
@@ -337,11 +352,13 @@ export default function PortfolioPage({ onPageChange }) {
 
         {visibleProjects.length === 0 && (
           <div className="rounded-[22px] border border-dashed border-white/10 py-24 text-center">
-            <p className="text-sm text-white/45">No projects match that filter.</p>
+            <p className="text-sm text-white/45">
+              No projects match that filter.
+            </p>
             <button
               onClick={() => {
-                setActiveCategory('All');
-                setSearchQuery('');
+                setActiveCategory("All");
+                setSearchQuery("");
               }}
               className="mt-4 cursor-pointer text-xs font-semibold uppercase tracking-widest text-[#5FFEBC]"
             >
@@ -360,7 +377,7 @@ export default function PortfolioPage({ onPageChange }) {
             </h2>
           </div>
           <button
-            onClick={() => onPageChange('/contact')}
+            onClick={() => onPageChange("/contact")}
             className="flex cursor-pointer items-center gap-3 rounded-full bg-[#5FFEBC] px-6 py-3.5 text-xs font-bold uppercase tracking-[0.14em] text-[#07110E] transition-transform hover:scale-[1.03]"
           >
             Work with us
