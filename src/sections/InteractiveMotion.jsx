@@ -1,30 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Pause, RotateCcw, Sliders, Layers, Monitor, HelpCircle, Activity } from 'lucide-react';
+import { useState } from 'react';
+import { Play, Pause, RotateCcw, Sliders, Layers, Monitor } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
 
 export default function InteractiveMotion() {
   const [playhead, setPlayhead] = useState(30); // 0 to 100%
   const [isPlaying, setIsPlaying] = useState(false);
-  const [activeTrack, setActiveTrack] = useState('Position');
   const [easingPreset, setEasingPreset] = useState('Linear');
   
-  // Animation loop
-  useEffect(() => {
-    let animId;
-    if (isPlaying) {
-      const updatePlayhead = () => {
-        setPlayhead((prev) => {
-          if (prev >= 100) return 0;
-          return +(prev + 0.5).toFixed(1);
-        });
-        animId = requestAnimationFrame(updatePlayhead);
-      };
-      animId = requestAnimationFrame(updatePlayhead);
-    }
-    return () => cancelAnimationFrame(animId);
-  }, [isPlaying]);
-
   // Interpolate transformation variables based on playhead and easing preset
   const getInterpolatedValues = (p) => {
     // Convert 0-100 percentage to a fraction 0-1

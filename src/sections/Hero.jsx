@@ -1,44 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Calendar, Cpu, Activity, BarChart2, Layers } from 'lucide-react';
-import GlassCard from '../components/GlassCard';
+import { Play } from 'lucide-react';
 import VideoModal from '../components/VideoModal';
 
-export default function Hero({ onPageChange }) {
+export default function Hero() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const [renderProgress, setRenderProgress] = useState(0);
-  const [coords, setCoords] = useState({ x: 140, y: 80 });
-  const [gpuTemp, setGpuTemp] = useState(64);
-
-  // Animate render progress loop
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRenderProgress((prev) => {
-        if (prev >= 100) return 0;
-        return +(prev + 0.4).toFixed(1);
-      });
-    }, 80);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Animate coordinates and temperature subtly
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCoords({
-        x: +(120 + Math.sin(Date.now() / 1000) * 80).toFixed(1),
-        y: +(90 + Math.cos(Date.now() / 800) * 50).toFixed(1),
-      });
-      setGpuTemp(Math.floor(62 + Math.random() * 5));
-    }, 100);
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleStartProjectClick = (e) => {
-    e.preventDefault();
-    if (onPageChange) {
-      onPageChange('/contact');
-    }
-  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">

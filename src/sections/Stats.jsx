@@ -1,28 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { BarChart, Users, Award, ShieldAlert } from 'lucide-react';
 import GlassCard from '../components/GlassCard';
 
-function CountUp({ end, duration = 1.5 }) {
-  const [count, setCount] = useState(0);
-  const countRef = useRef(null);
-  const inView = useInView(countRef, { once: true });
-
-  useEffect(() => {
-    if (!inView) return;
-    let start = null;
-    const step = (timestamp) => {
-      if (!start) start = timestamp;
-      const progress = Math.min((timestamp - start) / (duration * 1000), 1);
-      setCount(Math.floor(progress * end));
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
-    };
-    requestAnimationFrame(step);
-  }, [inView, end, duration]);
-
-  return <span ref={countRef}>{count}</span>;
+function CountUp({ end }) {
+  return <span>{end}</span>;
 }
 
 const statsData = [

@@ -1,5 +1,10 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+
+const dustParticles = [
+  [8, 14], [16, 72], [22, 38], [29, 88], [35, 21],
+  [42, 61], [49, 9], [55, 79], [62, 43], [68, 94],
+  [74, 26], [81, 67], [87, 48], [92, 16], [96, 84],
+];
 
 export default function BackgroundEffects() {
   return (
@@ -32,23 +37,13 @@ export default function BackgroundEffects() {
       />
 
       {/* Floating dust particles */}
-      {Array.from({ length: 15 }).map((_, i) => (
+      {dustParticles.map(([top, left], i) => (
         <motion.div
           key={i}
           className="absolute w-1 h-1 bg-[#6BB8FF] rounded-full opacity-[0.15]"
           style={{
-            top: `${Math.random() * 100}%`,
-            left: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, Math.random() * -60 - 20, 0],
-            x: [0, Math.random() * 40 - 20, 0],
-            opacity: [0.1, 0.4, 0.1],
-          }}
-          transition={{
-            duration: Math.random() * 12 + 8,
-            repeat: Infinity,
-            ease: "easeInOut",
+            top: `${top}%`,
+            left: `${left}%`,
           }}
         />
       ))}
@@ -62,16 +57,6 @@ export default function BackgroundEffects() {
             left: `${20 + i * 20}%`,
             top: 0,
             bottom: 0,
-          }}
-          animate={{
-            opacity: [0.08, 0.2, 0.08],
-            x: [0, 8, 0],
-          }}
-          transition={{
-            duration: Math.random() * 8 + 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: i * 1.5,
           }}
         />
       ))}

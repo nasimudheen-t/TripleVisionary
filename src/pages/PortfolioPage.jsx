@@ -148,7 +148,7 @@ export default function PortfolioPage({ onPageChange }) {
   const scroll = (direction) => {
     scrollRef.current?.scrollBy({
       left: direction === "left" ? -250 : 250,
-      behavior: "smooth",
+      behavior: "auto",
     });
   };
 
@@ -266,13 +266,13 @@ export default function PortfolioPage({ onPageChange }) {
                         {name}
                       </span>
 
-                      <span
+                      {/* <span
                         className={
                           isActive ? "text-[#5FFEBC]/70" : "text-white/25"
                         }
                       >
                         {String(categoryCounts[name] || 0).padStart(2, "0")}
-                      </span>
+                      </span> */}
                     </button>
                   );
                 })}

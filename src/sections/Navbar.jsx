@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const navItems = [
@@ -11,8 +11,6 @@ const navItems = [
 
 export default function Navbar({ currentPath, onPageChange }) {
   const [scrolled, setScrolled] = useState(false);
-  const activeRef = useRef(null);
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
@@ -22,14 +20,6 @@ export default function Navbar({ currentPath, onPageChange }) {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // useEffect(() => {
-  //   activeRef.current?.scrollIntoView({
-  //     behavior: "smooth",
-  //     inline: "center",
-  //     block: "nearest",
-  //   });
-  // }, [currentPath]);
 
   const handleNavClick = (e, path) => {
     e.preventDefault();
