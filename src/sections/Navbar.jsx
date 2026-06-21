@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Logo from "../assets/Logo/Logo.png";
 
 const navItems = [
-  { name: "Portfolio", path: "/portfolio" },
+  { name: "ShowCase", path: "/show" },
   { name: "Assets", path: "/assets" },
-  { name: "Services", path: "/services" },
   { name: "Addon", path: "/addon" },
+  { name: "Services", path: "/services" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -57,7 +58,7 @@ relative
           {/* Logo */}
 
           <a
-            href="/portfolio"
+            href="/show"
             onClick={(e) => handleNavClick(e, "/portfolio")}
             className="
               flex-shrink-0
@@ -74,11 +75,9 @@ relative
               to-[#1b1b1b]
             "
           >
-            <img
-              src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=100&h=100&fit=crop"
-              alt="Logo"
-              className="w-8 h-8 rounded-full object-cover border border-white/20"
-            />
+            <img 
+            
+            src={Logo} alt="Logo" className="w-7 h-9 object-contain " />
           </a>
 
           {/* Desktop */}

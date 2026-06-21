@@ -51,7 +51,7 @@ export default function App() {
       case '/assets':
         return <Asset onPageChange={handlePageChange} />;
       case '/process':
-      case '/portfolio':
+      case '/show':
         return <PortfolioPage onPageChange={handlePageChange} />;
       case '/services':
         return <ServicesPage onPageChange={handlePageChange} />;

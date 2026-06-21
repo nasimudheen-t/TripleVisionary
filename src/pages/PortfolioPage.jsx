@@ -18,40 +18,43 @@ import { useRef } from "react";
 import VideoModal from "../components/VideoModal";
 
 const categories = [
-  { name: "VFX", icon: Sparkles },
+  { name: "All", icon: Clapperboard },
+  { name: "Video Editing", icon: Film },
+  { name: "Motion Graphics", icon: Sparkles },
   { name: "3D Animation", icon: Cuboid },
-  { name: "Video Edits", icon: Film },
+  { name: "2D Animation", icon: Clapperboard },
+  { name: "VFX", icon: Sparkles },
   { name: "Photo Manipulation", icon: Image },
   { name: "Graphic Designs", icon: Palette },
   { name: "UI/UX", icon: MonitorSmartphone },
-  { name: "2D Animation", icon: Clapperboard },
 ];
 const projects = [
   {
     id: 1,
     title: "Midnight City",
     subtitle: "Cinematic brand film",
-    category: "Video Editing",
-    image: "/assets/vfx_city.png",
+    category: "Graphic Designs",
+    image: "/assets/Projects/y2kweeknd.png",
     accent: "#60E6C1",
     year: "2026",
     duration: "01:24",
     format: "4K",
     featured: true,
+    type: "video",
     videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
     id: 2,
-    title: "Future Interface",
-    subtitle: "Product UI launch sequence",
+    title: "Y2K Poster",
+    subtitle: "Y2k Weeknd Poster",
     category: "Motion Graphics",
-    image: "/assets/hud_motion.png",
+    image: "/assets/Projects/y2kweeknd.png",
     accent: "#7BD7FF",
     year: "2026",
     duration: "00:45",
     format: "4K",
     featured: false,
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    type: "image",
   },
   {
     id: 3,
@@ -64,6 +67,7 @@ const projects = [
     duration: "00:30",
     format: "CGI",
     featured: false,
+    type: "video",
     videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
@@ -77,6 +81,7 @@ const projects = [
     duration: "00:38",
     format: "2K",
     featured: false,
+    type: "video",
     videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
@@ -90,6 +95,7 @@ const projects = [
     duration: "01:12",
     format: "HD",
     featured: false,
+    type: "video",
     videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
@@ -103,6 +109,7 @@ const projects = [
     duration: "00:52",
     format: "4K",
     featured: false,
+    type: "video",
     videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
@@ -116,6 +123,7 @@ const projects = [
     duration: "00:28",
     format: "HD",
     featured: false,
+    type: "video",
     videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
@@ -129,6 +137,7 @@ const projects = [
     duration: "00:41",
     format: "CGI",
     featured: false,
+    type: "video",
     videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
 ];
@@ -186,6 +195,8 @@ export default function PortfolioPage({ onPageChange }) {
   }, [activeCategory, searchQuery, sortOrder]);
 
   const openProject = (project) => {
+    if (project.type !== "video" || !project.videoUrl) return;
+
     setModal({
       isOpen: true,
       url: project.videoUrl,
@@ -197,7 +208,7 @@ export default function PortfolioPage({ onPageChange }) {
     <div className="relative min-h-screen pb-24 pt-28 md:pt-32">
       <div className="pointer-events-none absolute left-1/2 top-0 h-[560px] w-[900px] -translate-x-1/2 rounded-full bg-[#5FFEBC]/[0.07] blur-[140px]" />
 
-      <section className="relative z-10 mx-auto max-w-6xl px-5 md:px-6">
+      <section className="relative z-10 w-full px-6">
         {/* <div className="grid items-end gap-8 border-b border-white/10 pb-10 md:grid-cols-[1fr_360px] md:pb-14">
           <div>
             <div className="mb-5 flex items-center gap-3">
@@ -227,7 +238,7 @@ export default function PortfolioPage({ onPageChange }) {
           </div>
         </div> */}
 
-        <div className="sticky top-[70px] z-30 -mx-2 mt-6 rounded-2xl border border-white/10 bg-[#0B0F14]/85 p-2 shadow-2xl shadow-black/20 backdrop-blur-xl">
+        <div className="sticky top-[70px] z-30 mt-6 w-full rounded-2xl bg-[#0B0F14]/90 p-2 shadow-2xl backdrop-blur-xl">
           <div className="flex flex-col gap-2 lg:flex-row lg:items-center">
             <div className="relative flex flex-1 items-center">
               <button
@@ -239,7 +250,7 @@ export default function PortfolioPage({ onPageChange }) {
 
               <div
                 ref={scrollRef}
-                className="scrollbar-hide mx-10 flex gap-1 overflow-x-auto scroll-smooth"
+                className="scrollbar-hide mx-10 flex gap- overflow-x-auto scroll-smooth"
               >
                 {categories.map(({ name, icon: Icon }) => {
                   const isActive = activeCategory === name;
@@ -300,7 +311,7 @@ export default function PortfolioPage({ onPageChange }) {
                 value={sortOrder}
                 onChange={(event) => setSortOrder(event.target.value)}
                 aria-label="Sort projects"
-                className="cursor-pointer rounded-xl border-0 bg-white/[0.045] px-3 text-[11px] text-white/65 outline-none"
+                className="cursor-pointer rounded-xl bg-[#151A20] px-3 text-[11px] text-white/70 outline-none"
               >
                 <option className="bg-[#10151C]">Newest</option>
                 <option className="bg-[#10151C]">Oldest</option>
@@ -309,77 +320,69 @@ export default function PortfolioPage({ onPageChange }) {
           </div>
         </div>
 
-        <div className="mb-5 mt-10 flex items-center justify-between">
+        <div className="mb-4 mt-10 flex items-center justify-between">
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/35">
             {String(visibleProjects.length).padStart(2, "0")} projects found
           </p>
           <div className="h-px w-20 bg-gradient-to-r from-transparent to-white/20" />
         </div>
 
-        <motion.div layout className="grid gap-5 md:grid-cols-2">
+        <motion.div
+          layout
+className="w-full columns-1 gap-0 sm:columns-2 md:columns-3 xl:columns-4"
+        >
           <AnimatePresence mode="popLayout">
             {visibleProjects.map((project, index) => (
               <motion.article
                 layout
                 key={project.id}
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.97 }}
-                transition={{ duration: 0.35, delay: index * 0.025 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.12 }}
+                exit={{ opacity: 0, y: 12 }}
+                transition={{
+                  duration: 0.45,
+                  delay: Math.min(index * 0.035, 0.2),
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 onClick={() => openProject(project)}
-                className={`group cursor-pointer overflow-hidden rounded-[22px] border border-white/[0.09] bg-[#10151C] transition-colors hover:border-white/20 ${
-                  project.featured && activeCategory === "All" && !searchQuery
-                    ? "md:col-span-2"
-                    : ""
+               className={`group mb-0 inline-block w-full break-inside-avoid overflow-hidden ${
+                  project.type === "video" ? "cursor-pointer" : "cursor-default"
                 }`}
               >
-                <div
-                  className={`relative overflow-hidden ${
-                    project.featured && activeCategory === "All" && !searchQuery
-                      ? "aspect-[16/8]"
-                      : "aspect-[16/10]"
-                  }`}
-                >
+                <div className="relative w-full overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.04]"
+                    loading="lazy"
+                    decoding="async"
+                    className="block h-auto w-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-[1.04]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/5 to-black/15" />
-                  <div
-                    className="absolute inset-0 opacity-0 mix-blend-screen transition-opacity duration-500 group-hover:opacity-20"
-                    style={{ background: project.accent }}
-                  />
+                  <div className="pointer-events-none absolute inset-0 bg-black/0 transition-colors duration-[400ms] ease-out group-hover:bg-black/25" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/75 to-transparent opacity-0 transition-opacity duration-[400ms] group-hover:opacity-100" />
 
-                  <div className="absolute left-4 top-4 flex gap-2">
-                    <span className="rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-[9px] font-medium uppercase tracking-[0.16em] text-white/80 backdrop-blur-md">
+                  <div className="absolute left-3 top-3">
+                    <span className="inline-flex rounded-full bg-black/30 px-3 py-1.5 text-[9px] font-medium uppercase tracking-[0.14em] text-white/90 backdrop-blur-xl">
                       {project.category}
                     </span>
-                    <span className="rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-[9px] font-medium uppercase tracking-[0.16em] text-white/55 backdrop-blur-md">
-                      {project.format}
-                    </span>
                   </div>
 
-                  <div className="absolute right-4 top-4 flex h-11 w-11 scale-90 items-center justify-center rounded-full bg-white text-black opacity-0 shadow-xl transition-all duration-300 group-hover:scale-100 group-hover:opacity-100">
-                    <Play size={15} fill="currentColor" className="ml-0.5" />
-                  </div>
+                  {project.type === "video" && (
+                    <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                      <div className="flex h-12 w-12 scale-90 items-center justify-center rounded-full bg-white/90 text-black opacity-90 backdrop-blur-md transition-transform duration-[400ms] group-hover:scale-100">
+                        <Play size={16} fill="currentColor" className="ml-0.5" />
+                      </div>
+                    </div>
+                  )}
 
-                  <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 md:p-7">
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-3 p-4 opacity-0 transition-all duration-[400ms] ease-out group-hover:translate-y-0 group-hover:opacity-100">
                     <div>
-                      <p className="mb-2 text-[10px] uppercase tracking-[0.18em] text-white/45">
+                      <p className="mb-1 text-[9px] uppercase tracking-[0.14em] text-white/65">
                         {project.subtitle}
                       </p>
-                      <h2 className="font-display text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+                      <h2 className="font-display text-lg font-semibold text-white">
                         {project.title}
                       </h2>
-                    </div>
-                    <div className="hidden items-center gap-3 font-mono text-[9px] text-white/40 sm:flex">
-                      <span>{project.year}</span>
-                      <span
-                        className="h-1 w-1 rounded-full"
-                        style={{ background: project.accent }}
-                      />
-                      <span>{project.duration}</span>
                     </div>
                   </div>
                 </div>

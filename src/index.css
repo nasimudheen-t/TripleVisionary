@@ -17,15 +17,6 @@
   
 }
 
-/* Keep every visual state change immediate across the project. */
-*,
-*::before,
-*::after {
-  animation: none !important;
-  scroll-behavior: auto !important;
-  transition: none !important;
-}
-
 /* Base custom styles */
 body {
   background-color: var(--color-brand-bg-darkest);
