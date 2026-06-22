@@ -208,7 +208,7 @@ export default function PortfolioPage({ onPageChange }) {
     <div className="relative min-h-screen pb-24 pt-28 md:pt-32">
       <div className="pointer-events-none absolute left-1/2 top-0 h-[560px] w-[900px] -translate-x-1/2 rounded-full bg-[#5FFEBC]/[0.07] blur-[140px]" />
 
-      <section className="relative z-10 w-full px-6">
+      <section >
         {/* <div className="grid items-end gap-8 border-b border-white/10 pb-10 md:grid-cols-[1fr_360px] md:pb-14">
           <div>
             <div className="mb-5 flex items-center gap-3">

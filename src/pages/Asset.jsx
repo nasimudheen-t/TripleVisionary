@@ -10,7 +10,7 @@ const assetData = [
     software: "Blender",
     year: "2026",
     sizeMB: "284",
-    downloadLink: "http://10.2.0.2:8080/stream/9?hash=fdd6e4",
+    downloadLink: "https://t.me/triplevisionaryarchive/10",
   },
   {
     id: "b2",
@@ -164,21 +164,7 @@ const Asset = () => {
   return (
     <div className="min-h-screen bg-gray-950 text-gray-200 font-sans p-6 md:p-10">
       {/* Header / Navigation (matching the design from the image) */}
-      <header className="flex flex-wrap justify-between items-center border-b border-gray-800 pb-4 mb-8">
-        <div className="text-2xl font-bold tracking-wider text-cyan-400">
-          VORTEX
-        </div>
-        <nav className="flex flex-wrap gap-6 text-sm uppercase tracking-wider">
-          <span className="hover:text-cyan-400 cursor-pointer">ShowCase</span>
-          <span className="hover:text-cyan-400 cursor-pointer border-b-2 border-cyan-400 text-cyan-400">
-            Assets
-          </span>
-          <span className="hover:text-cyan-400 cursor-pointer">Addon</span>
-          <span className="hover:text-cyan-400 cursor-pointer">Services</span>
-          <span className="hover:text-cyan-400 cursor-pointer">Contact</span>
-        </nav>
-      </header>
-
+   
       {/* Page Title */}
       <div className="mb-8">
         <h1 className="text-4xl font-light tracking-wider">
@@ -256,7 +242,7 @@ const Asset = () => {
                   href={asset.downloadLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 bg-cyan-600 hover:bg-cyan-500 text-white text-sm font-medium px-4 py-1.5 rounded-lg transition-all duration-200 shadow-lg shadow-cyan-600/20 hover:shadow-cyan-500/40"
+                  className="flex items-center gap-1 bg-[#5FFEBC] hover:bg-[#5FFEBC] text-black text-sm font-medium px-4 py-1.5 rounded-lg transition-all duration-200 shadow-lg shadow-cyan-600/20 hover:shadow-cyan-500/40"
                 >
                   <svg
                     className="w-4 h-4"

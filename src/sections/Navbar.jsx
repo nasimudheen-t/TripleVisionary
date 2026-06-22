@@ -110,7 +110,7 @@ relative
 
      ${
        active
-         ? "text-black bg-gradient-to-b from-[#5FFEBC] via-[#5FFEBC] to-[#5FFEBC]"
+         ? "text-black bg-gradient-to-b from-cyan-400 via-cyan-500 to-cyan-600"
          : "text-gray-300 bg-gradient-to-b from-[#4b4b4b] via-[#2b2b2b] to-[#171717] hover:from-[#616161] hover:to-[#222] hover:text-white"
      }       `}
                 >
