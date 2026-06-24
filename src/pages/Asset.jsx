@@ -65,7 +65,7 @@ const Asset = () => {
             onClick={() => setActiveFilter(software)}
             className={`px-5 py-2 text-sm font-medium rounded-t-lg transition-all duration-200 ${
               activeFilter === software
-                ? "bg-cyan-600 text-white shadow-lg shadow-cyan-500/30"
+                ? "bg-[#0E7A0D] text-white shadow-lg shadow-cyan-500/30"
                 : "bg-gray-800 text-gray-300 hover:bg-gray-700"
             }`}
           >

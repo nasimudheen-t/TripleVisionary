@@ -75,9 +75,7 @@ relative
               to-[#1b1b1b]
             "
           >
-            <img 
-            
-            src={Logo} alt="Logo" className="w-7 h-9 object-contain " />
+            <img src={Logo} alt="Logo" className="w-7 h-9 object-contain " />
           </a>
 
           {/* Desktop */}
@@ -110,7 +108,7 @@ relative
 
      ${
        active
-         ? "text-black bg-gradient-to-b from-cyan-400 via-cyan-500 to-cyan-600"
+         ? "text-black bg-gradient-to-b from-[#0E7A0D] via-[#0E7A0D] to-[#0E7A0D]"
          : "text-gray-300 bg-gradient-to-b from-[#4b4b4b] via-[#2b2b2b] to-[#171717] hover:from-[#616161] hover:to-[#222] hover:text-white"
      }       `}
                 >

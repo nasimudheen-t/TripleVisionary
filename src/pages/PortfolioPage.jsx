@@ -141,13 +141,13 @@ export default function PortfolioPage({ onPageChange }) {
                         size={13}
                         strokeWidth={isActive ? 2.5 : 1.8}
                         className={
-                          isActive ? "text-[#5FFEBC]" : "text-white/55"
+                          isActive ? "text-[#0E7A0D]" : "text-white/55"
                         }
                       />
 
                       <span
                         className={
-                          isActive ? "text-[#5FFEBC]" : "text-white/55"
+                          isActive ? "text-[#0E7A0D]" : "text-white/55"
                         }
                       >
                         {name}
