@@ -150,47 +150,39 @@ export default function Hero({ onPageChange }) {
           </div>
         </div>
         {/* Statement Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative z-10 py-16 px-6"
-        >
-          <div className="max-w-6xl mx-auto flex items-center justify-center gap-6">
-            {/* Anti AI Image */}
-            <div className="relative flex-shrink-0">
-              {/* Green Background Inside */}
-              <div className="absolute inset-1 rounded-full bg-green-500" />
+   <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+  className="relative z-30 px-6 py-16"
+>
+  <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-center md:flex-row md:justify-center md:text-left">
+    {/* Anti AI Image */}
+    <div className="relative flex-shrink-0">
+      <div className="absolute inset-1 rounded-full bg-green-500" />
+      <div className="absolute inset-1 rounded-full bg-green-400 blur-xl opacity-80" />
+      <div className="absolute inset-0 rounded-full border-2 border-green-400 shadow-[0_0_40px_rgba(34,197,94,0.9)]" />
 
-              {/* Inner Glow */}
-              <div className="absolute inset-1 rounded-full bg-green-400 blur-xl opacity-80" />
+      <img
+        src="/assets/fukk-ai.png"
+        alt="Anti AI"
+        className="relative z-10 h-20 w-20 rounded-full object-cover md:h-24 md:w-24"
+      />
+    </div>
 
-              {/* Outer Ring & Glow */}
-              <div className="absolute inset-0 rounded-full border-2 border-green-400 shadow-[0_0_40px_rgba(34,197,94,0.9)]" />
+    {/* Text */}
+    <div className="max-w-xl">
+      <h3 className="text-lg font-bold uppercase leading-tight tracking-tight text-white md:text-2xl lg:text-xl">
+        We are free from AI generated imaginary
+      </h3>
 
-              {/* Image */}
-              <img
-                src="/assets/fukk-ai.png"
-                alt="Anti AI"
-                className="relative z-10 w-20 h-20 md:w-24 md:h-24 object-cover rounded-full"
-              />
-            </div>
-
-            {/* Text */}
-            <div className="w-fit">
-              {/* First Line */}
-              <h3 className="w-fit text-xl md:text-3xl lg:text-xl font-bold uppercase tracking-tight text-white leading-tight">
-                We are free from AI generated imaginary
-              </h3>
-
-              {/* Second Line */}
-              <span className="block w-[115%] mt-2 bg-gradient-to-r from-white via-[#8EEBFF] to-[#00ff0d] bg-clip-text text-transparent text-2xl md:text-5xl lg:text-3xl font-extrabold">
-                100% Human made content
-              </span>
-            </div>
-          </div>
-        </motion.div>
+      <span className="mt-2 block bg-gradient-to-r from-white via-[#8EEBFF] to-[#00ff0d] bg-clip-text text-xl font-extrabold text-transparent md:text-4xl lg:text-3xl">
+        100% Human made content
+      </span>
+    </div>
+  </div>
+</motion.div>
       </div>
 
       {/* Showreel video modal */}
