@@ -9,9 +9,9 @@ export default function ServicesPage({ onPageChange }) {
   }, []);
 
   return (
-    <div className="pt-32 pb-20 relative">
+    <div className="  relative">
       {/* Page Header */}
-      <div className="container mx-auto px-6 max-w-6xl text-center mb-16 relative z-10">
+      {/* <div className="container mx-auto px-6 max-w-6xl text-center mb-16 relative z-10">
         <div className="flex items-center justify-center gap-2 mb-3">
           <span className="w-1.5 h-1.5 rounded-full bg-[#00D4FF] animate-pulse" />
           <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-[#00D4FF]">
@@ -24,7 +24,7 @@ export default function ServicesPage({ onPageChange }) {
         <p className="text-sm md:text-base text-[#C6D3E1]/70 max-w-xl mx-auto font-light">
           A review of our video editing, motion design, 3D CGI, and VFX post-production capabilities.
         </p>
-      </div>
+      </div> */}
 
       {/* Services Grid */}
       <Services />
@@ -40,7 +40,7 @@ export default function ServicesPage({ onPageChange }) {
           </p>
           <button
             onClick={() => onPageChange('/contact')}
-            className="px-6 py-3 rounded-full bg-gradient-to-r from-[#00D4FF] to-[#6BB8FF] text-[#0B0F14] font-mono text-xs font-bold tracking-widest uppercase flex items-center gap-2 mx-auto hover:brightness-110 transition-all cursor-pointer"
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-[#16db12] to-[#58de55] text-[#0B0F14] font-mono text-xs font-bold tracking-widest uppercase flex items-center gap-2 mx-auto hover:brightness-110 transition-all cursor-pointer"
           >
             INITIALIZE PROJECT SCOPE
             <ArrowRight size={14} />

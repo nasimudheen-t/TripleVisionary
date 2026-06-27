@@ -38,7 +38,7 @@ export default function Navbar({ currentPath, onPageChange }) {
 max-w-6xl
 h-10
 overflow-hidden
-rounded-xl
+rounded-[8px]
 border
 border-[#585858]
 bg-gradient-to-b
@@ -70,12 +70,19 @@ relative
               border-r
               border-[#444]
               bg-gradient-to-b
-              from-[#555]
+              from-[#446c6a]
               via-[#333]
               to-[#1b1b1b]
             "
           >
-            <img src={Logo} alt="Logo" className="w-7 h-9 object-contain " />
+           <img 
+  src={Logo} 
+  alt="Logo" 
+  className="w-7 h-9 object-contain"
+  style={{
+    filter: 'drop-shadow(0 0 6px #00D4FF) drop-shadow(0 0 12px #6BB8FF)',
+  }}
+/>
           </a>
 
           {/* Desktop */}
@@ -105,11 +112,10 @@ relative
                     border-[#444]
                     transition-all
                     duration-300
-
      ${
        active
-         ? "text-black bg-gradient-to-b from-[#0E7A0D] via-[#0E7A0D] to-[#0E7A0D]"
-         : "text-gray-300 bg-gradient-to-b from-[#4b4b4b] via-[#2b2b2b] to-[#171717] hover:from-[#616161] hover:to-[#222] hover:text-white"
+         ? "text-black bg-[#4599e7]"
+         : "text-gray-300 bg-gradient-to-b from-[#446c6a] via-[#2b2b2b] to-[#171717] hover:from-[#616161] hover:to-[#222] hover:text-white"
      }       `}
                 >
                   {item.name}

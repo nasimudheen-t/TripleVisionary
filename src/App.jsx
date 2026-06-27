@@ -45,7 +45,7 @@ export default function App() {
     
     switch (normalizedPath) {
       case '/home':
-        return <Home />;
+        return <Home onPageChange={handlePageChange} />;
       case '/addon':
         return <Addon onPageChange={handlePageChange} />;
       case '/assets':
@@ -60,7 +60,7 @@ export default function App() {
       case '/contact':
         return <ContactPage />;
       default:
-        return <Home />;
+        return <Home onPageChange={handlePageChange} />;
     }
   };
 

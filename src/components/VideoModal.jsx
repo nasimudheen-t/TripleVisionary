@@ -47,22 +47,13 @@ export default function VideoModal({ isOpen, onClose, videoUrl, videoTitle }) {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.95, opacity: 0 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="relative w-full max-w-4xl glass-panel rounded-2xl overflow-hidden shadow-2xl border border-white/10 z-10 scanlines"
+         className="relative w-full max-w-4xl glass-panel rounded-2xl overflow-hidden shadow-2xl border border-white/10 z-10"
         >
           {/* Top HUD bar */}
-          <div className="flex items-center justify-between px-4 py-3 bg-[#10151C]/90 border-b border-white/5 text-xs font-mono text-brand-text-muted">
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#00D4FF] animate-pulse" />
-              <span>HUD_MONITOR // CH_01</span>
-              <span className="opacity-40">|</span>
-              <span className="text-white font-medium truncate max-w-[200px] md:max-w-xs">{videoTitle || "Showreel Preview"}</span>
-            </div>
+          <div className="flex items-center justify-between px-4 py-3 bg-[#10151C]/90">
+          
             
             <div className="flex items-center gap-4">
-              <span className="hidden md:flex items-center gap-1 opacity-70">
-                <Cpu size={12} className="text-[#00D4FF] animate-spin-slow" />
-                DECODING FEED
-              </span>
               <button 
                 onClick={onClose}
                 className="p-1 hover:bg-white/10 rounded-md transition-colors text-white cursor-pointer"
@@ -94,9 +85,8 @@ export default function VideoModal({ isOpen, onClose, videoUrl, videoTitle }) {
           </div>
           
           {/* Bottom HUD metadata */}
-          <div className="flex items-center justify-between px-4 py-2 bg-[#10151C]/90 border-t border-white/5 text-[10px] font-mono text-[#C6D3E1]/50">
-            <span>BITRATE: DYNAMIC // CODEC: H.264</span>
-            <span>2026 CREATIVE STUDIO SYSTEM</span>
+          <div className="flex items-center justify-between px-4 py-2 bg-[#10151C]/90">
+            <span>TripleVisionary</span>
           </div>
         </motion.div>
       </div>

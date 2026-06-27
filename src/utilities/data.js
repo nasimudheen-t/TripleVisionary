@@ -9,7 +9,6 @@ import {
 } from "lucide-react";
 // import { ChevronLeft, ChevronRight } from "lucide-react";
 
-
 export const categories = [
   { name: "All", icon: Clapperboard },
   { name: "Video Edits", icon: Film },
@@ -35,6 +34,7 @@ export const projects = [
     format: "4K",
     featured: true,
     type: "image",
+
     // videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
@@ -76,6 +76,10 @@ export const projects = [
     format: "2K",
     featured: false,
     type: "image",
+    addon: {
+      available: true,
+      assetId: "b1",
+    },
     // videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
   {
@@ -90,22 +94,13 @@ export const projects = [
     format: "HD",
     featured: false,
     type: "image",
+     addon: {
+      available: true,
+      assetId: "b2",
+    },
     // videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
-  // {
-  //   id: 6,
-  //   title: "After Hours",
-  //   subtitle: "/assets/Projects/image5.jpg",
-  //   category: "Graphic Designs",
-  //   image: "/assets/Projects/image6.png",
-  //   accent: "#FF809F",
-  //   year: "2025",
-  //   duration: "00:52",
-  //   format: "4K",
-  //   featured: false,
-  //   type: "image",
-  //   // videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  // },
+
   {
     id: 7,
     title: "Chromatic Bloom",
@@ -163,20 +158,6 @@ export const projects = [
     videoUrl: "https://youtu.be/MVvjsDDOjpw?is=ZS-C0mnXEzwYOzG3",
   },
   {
-    id: 11,
-    title: "Obi-wan kenobi scene recreated",
-    subtitle: "Obi-wan kenobi scene recreated",
-    category: "Motion Graphics",
-    image: "/assets/Projects/image9.jpeg",
-    accent: "#78F0A5",
-    year: "2024",
-    duration: "00:28",
-    format: "HD",
-    featured: false,
-    type: "video",
-    videoUrl: "https://youtube.com/shorts/Vi555TCYzOk?is=hrbkJLXq4rlyYZ7W",
-  },
-  {
     id: 12,
     title: "Obi-wan kenobi scene recreated",
     subtitle: "Obi-wan kenobi scene recreated",
@@ -190,7 +171,7 @@ export const projects = [
     type: "video",
     videoUrl: "https://youtu.be/fSWKJpSQKjE",
   },
-   {
+  {
     id: 12,
     title: "Obi-wan kenobi scene recreated",
     subtitle: "Obi-wan kenobi scene recreated",
@@ -204,148 +185,48 @@ export const projects = [
     type: "image",
     videoUrl: "",
   },
-  // {
-  //   id: 8,
-  //   title: "Material Study 01",
-  //   subtitle: "Procedural product film",
-  //   category: "3D Animation",
-  //   image: "/assets/cgi_product.png",
-  //   accent: "#88A8FF",
-  //   year: "2024",
-  //   duration: "00:41",
-  //   format: "CGI",
-  //   featured: false,
-  //   type: "video",
-  //   videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  // },
+  {
+    id: 13,
+    title: "Obi-wan kenobi scene recreated",
+    subtitle: "Obi-wan kenobi scene recreated",
+    category: "Motion Graphics",
+    image: "/assets/Projects/image12.jpeg",
+    accent: "#78F0A5",
+    year: "2024",
+    duration: "00:28",
+    format: "HD",
+    featured: false,
+    type: "video",
+    videoUrl: "https://www.youtube.com/shorts/Vi555TCYzOk?is=hrbkJLXq4rlyYZ7W",
+  },
+  {
+    id: 14,
+    title: "Signal / Noise",
+    subtitle: "Editorial title treatment",
+    category: "3D",
+    image: "/assets/Projects/image13.jpg",
+    accent: "#C99BFF",
+    year: "2025",
+    duration: "00:38",
+    format: "2K",
+    featured: false,
+    type: "image",
+    // videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  },
 ];
 
 export const assetData = [
   // Blender assets
   {
     id: "b1",
-    name: "Vortex_Cyberpunk_Scene",
+    name: "Cyber city",
     extension: ".blend",
     software: "Blender",
     year: "2026",
-    sizeMB: "284",
-    downloadLink: "https://t.me/triplevisionaryarchive/10",
+    downloadLink: "https://t.me/triplevisionaryarchive/13",
   },
-  {
-    id: "b2",
-    name: "Vortex_Character_Rig",
-    extension: ".blend",
-    software: "Blender",
-    year: "2025",
-    sizeMB: "142",
-    downloadLink: "#",
-  },
-  {
-    id: "b3",
-    name: "Vortex_Environment_Kit",
-    extension: ".blend",
-    software: "Blender",
-    year: "2026",
-    sizeMB: "512",
-    downloadLink: "#",
-  },
-  // After Effects assets
-  {
-    id: "a1",
-    name: "Vortex_Title_Animation",
-    extension: ".aep",
-    software: "After Effects",
-    year: "2026",
-    sizeMB: "96",
-    downloadLink: "#",
-  },
-  {
-    id: "a2",
-    name: "Vortex_Motion_Graphics_Template",
-    extension: ".aep",
-    software: "After Effects",
-    year: "2025",
-    sizeMB: "210",
-    downloadLink: "#",
-  },
-  // Cinema 4D assets
-  {
-    id: "c1",
-    name: "Vortex_Product_Visualization",
-    extension: ".c4d",
-    software: "Cinema 4D",
-    year: "2026",
-    sizeMB: "378",
-    downloadLink: "#",
-  },
-  {
-    id: "c2",
-    name: "Vortex_Abstract_Shapes",
-    extension: ".c4d",
-    software: "Cinema 4D",
-    year: "2025",
-    sizeMB: "65",
-    downloadLink: "#",
-  },
-  // Maya assets
-  {
-    id: "m1",
-    name: "Vortex_VFX_Explosion",
-    extension: ".ma",
-    software: "Maya",
-    year: "2026",
-    sizeMB: "430",
-    downloadLink: "#",
-  },
-  {
-    id: "m2",
-    name: "Vortex_Character_Animation",
-    extension: ".mb",
-    software: "Maya",
-    year: "2025",
-    sizeMB: "198",
-    downloadLink: "#",
-  },
-  // Premiere Pro assets
-  {
-    id: "p1",
-    name: "Vortex_Editing_Project",
-    extension: ".prproj",
-    software: "Premiere Pro",
-    year: "2026",
-    sizeMB: "156",
-    downloadLink: "#",
-  },
-  {
-    id: "p2",
-    name: "Vortex_LUT_Pack",
-    extension: ".cube",
-    software: "Premiere Pro",
-    year: "2025",
-    sizeMB: "12",
-    downloadLink: "#",
-  },
-  // Additional assets for variety
-  {
-    id: "n1",
-    name: "Vortex_Nuke_Composite",
-    extension: ".nk",
-    software: "Nuke",
-    year: "2026",
-    sizeMB: "324",
-    downloadLink: "#",
-  },
-  {
-    id: "h1",
-    name: "Vortex_Houdini_FX",
-    extension: ".hip",
-    software: "Houdini",
-    year: "2025",
-    sizeMB: "567",
-    downloadLink: "#",
-  },
-];
 
+];
 
 export const softwareList = [
   "All",

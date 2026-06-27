@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, PhoneCall, Mail, MessageSquare, Terminal } from "lucide-react";
+import { Send, PhoneCall, Mail, MessageSquare, ExternalLink,Briefcase } from "lucide-react";
 import GlassCard from "../components/GlassCard";
 
 export default function Contact() {
@@ -50,17 +50,13 @@ export default function Contact() {
         {/* Section Header */}
         <div className="flex flex-col items-center justify-center text-center mb-16">
           <div className="flex items-center gap-2 mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00D4FF] animate-pulse" />
-            <span className="text-[10px] font-mono tracking-[0.25em] uppercase text-[#00D4FF]">
-              SYSTEMS_CONTACT // SECURE TERMINAL
-            </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold font-display tracking-tight mb-4">
             Start Your Project
           </h2>
           <p className="text-sm md:text-base text-[#C6D3E1]/70 max-w-xl font-light">
             Initialize transmission. Connect with our producers to establish
-            timeline targets and specs.
+            timeline targets.
           </p>
         </div>
 
@@ -71,10 +67,8 @@ export default function Contact() {
             <GlassCard className="p-6 md:p-8 bg-[#10151C]/90 border border-white/10 scanlines">
               <div className="flex items-center justify-between border-b border-white/5 pb-3 mb-6 font-mono text-[9px] text-[#C6D3E1]/50">
                 <div className="flex items-center gap-1.5">
-                  <Terminal size={12} className="text-[#00D4FF]" />
-                  <span>TRANSMISSION_FORM // SECURED</span>
+                 
                 </div>
-                <span>STATUS: IDLE</span>
               </div>
 
               {/* Form Element */}
@@ -165,7 +159,7 @@ export default function Contact() {
                     rows="4"
                     value={formData.message}
                     onChange={handleInputChange}
-                    placeholder="PROVIDE TIMELINE TARGETS, REFERENCE LINKS, AND SPEC REQUIREMENTS..."
+                    placeholder="PROVIDE TIMELINE TARGETS, REFERENCE LINKS..."
                     className="w-full bg-black/45 border border-white/10 rounded-xl px-4 py-3 text-xs text-white placeholder-white/20 focus:outline-none focus:border-[#00D4FF] focus:ring-1 focus:ring-[#00D4FF]/30 transition-all font-mono resize-none"
                   />
                 </div>
@@ -255,7 +249,7 @@ export default function Contact() {
 
             {/* Widget 2: Email */}
             <a
-              href="mailto:triplevisionary@protonmail.com "
+              href="mailto:triplevisionary@protonmail.com"
               className="block group cursor-pointer"
             >
               <GlassCard className="p-5 bg-[#151D26]/60 border border-white/5 group-hover:border-[#00D4FF]/30 transition-all">
@@ -298,6 +292,30 @@ export default function Contact() {
 
                     <p className="text-[10px] text-[#C6D3E1]/70 mt-1 font-light">
                       Tap to call us directly.
+                    </p>
+                  </div>
+                </div>
+              </GlassCard>
+            </a>
+                {/* Upscrolled */}
+             <a href="https://share.upscrolled.com/en/user/dd096cdb-b9f6-4897-a1c0-546f3b7ce20e/" target="_blank" className="block group cursor-pointer">
+              <GlassCard className="p-5 bg-[#151D26]/60 border border-white/5 group-hover:border-[#6BB8FF]/30 transition-all">
+                <div className="flex items-center gap-4">
+                  <div className="w-11 h-11 rounded-xl bg-[#6BB8FF]/10 border border-[#6BB8FF]/20 text-[#6BB8FF] flex items-center justify-center group-hover:bg-[#6BB8FF] group-hover:text-black group-hover:border-[#6BB8FF] transition-all duration-300">
+                    <ExternalLink size={20} />
+                  </div>
+
+                  <div>
+                    <span className="block text-[8px] font-mono text-[#C6D3E1]/40 uppercase">
+                     
+                    </span>
+
+                    <h4 className="font-display font-bold text-sm text-white group-hover:text-[#6BB8FF] transition-colors">
+                     UPSCROLLED
+                    </h4>
+
+                    <p className="text-[10px] text-[#C6D3E1]/70 mt-1 font-light">
+                     Connect Us
                     </p>
                   </div>
                 </div>

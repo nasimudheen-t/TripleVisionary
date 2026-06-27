@@ -108,3 +108,48 @@ h1, h2, h3, h4, h5, h6 {
   width: 0;
   height: 0;
 }
+
+
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  gap: 28px;
+  animation: marquee 35s linear infinite;
+}
+
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

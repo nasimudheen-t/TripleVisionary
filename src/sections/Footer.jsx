@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         {/* Top Section: TripleVisionary Brand */}
         <div className="flex flex-col items-center text-center mb-12 border-b border-white/5 pb-10">
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#00D4FF] via-[#7B61FF] to-[#FF6B9D] bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#2b682a] via-[#58de55] to-[#3ae33a] bg-clip-text text-transparent mb-4">
             TripleVisionary
           </h2>
           <p className="text-sm text-[#C6D3E1]/60 max-w-2xl font-light leading-relaxed">
@@ -43,7 +43,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 border-b border-white/5 pb-10">
           {/* Services */}
           <div>
-            <h4 className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#00D4FF] font-bold mb-4">
+            <h4 className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#58de55] font-bold mb-4">
               Services
             </h4>
             <div className="grid grid-cols-2 gap-2">
@@ -62,12 +62,12 @@ export default function Footer() {
 
           {/* Contact with Image */}
           <div>
-            <h4 className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#00D4FF] font-bold mb-4">
+            <h4 className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#58de55] font-bold mb-4">
               Contact
             </h4>
              <div>
           
-                    <span className="text-sm">
+                    <span className="text-sm  ">
                       triplevisionary@protonmail.com
                     </span>
             
@@ -77,7 +77,7 @@ export default function Footer() {
 
         {/* Social Media */}
         <div className="flex flex-col items-center gap-6 mb-12 border-b border-white/5 pb-10">
-          <h4 className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#00D4FF] font-bold">
+          <h4 className="font-mono text-[9px] uppercase tracking-[0.2em] text-[#58de55] font-bold">
             Follow Us
           </h4>
           <div className="flex items-center gap-8">
@@ -110,12 +110,12 @@ export default function Footer() {
 
         {/* Bottom Section: Copyright & Diagnostics */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] font-mono text-[#C6D3E1]/40">
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <Cpu size={14} className="text-[#00D4FF]" />
             <span>TRIPLEVISIONARY // SYSTEM CORE 2.0</span>
-          </div>
+          </div> */}
 
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+          {/* <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
             <div className="flex items-center gap-1">
               <Copyright size={10} />
               <span>
@@ -124,7 +124,7 @@ export default function Footer() {
             </div>
             <span className="hidden md:inline text-white/10">|</span>
             <span>SYS_LOC: CREATIVE_NODE_01</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
