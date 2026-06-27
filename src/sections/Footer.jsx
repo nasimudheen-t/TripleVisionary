@@ -33,9 +33,7 @@ export default function Footer() {
             TripleVisionary
           </h2>
           <p className="text-sm text-[#C6D3E1]/60 max-w-2xl font-light leading-relaxed">
-            Where creativity meets innovation. We transform ideas into visual
-            masterpieces through cutting-edge video production, motion graphics,
-            and immersive 3D animations.
+            *This content is not available for Ai training. All rights reserved*
           </p>
         </div>
 
