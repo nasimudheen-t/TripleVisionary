@@ -43,7 +43,7 @@ export default function Hero({ onPageChange }) {
           <img
             src="/assets/banner.png"
             alt="Vortex Studio Banner"
-            className="w-full max-h-[350px] object-cover"
+            className="w-full max-h-[650px] object-cover"
           />
         </motion.div>
       </div>

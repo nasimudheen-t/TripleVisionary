@@ -19,6 +19,8 @@ export const categories = [
   { name: "Photo Manipulation", icon: Image },
   { name: "Graphic Designs", icon: Palette },
   { name: "UI/UX", icon: MonitorSmartphone },
+  { name: "Color Grading", icon: Palette },
+  { name: "UI/UX", icon: MonitorSmartphone },
 ];
 
 export const projects = [
