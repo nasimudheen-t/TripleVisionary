@@ -35,43 +35,6 @@ export default function Addon() {
           </div>
         </div>
 
-        {/* Stats Section */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
-          <div className="bg-[#14141a] border border-white/5 rounded-xl p-5 text-center hover:border-green-500/30 transition-all duration-300 group">
-            <div className="w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-green-500/20 transition-colors">
-              <Database className="w-5 h-5 text-green-400" />
-            </div>
-            <p className="text-2xl font-bold text-white">{files.length}</p>
-            <p className="text-gray-500 text-sm">Total Files</p>
-          </div>
-          
-          <div className="bg-[#14141a] border border-white/5 rounded-xl p-5 text-center hover:border-green-500/30 transition-all duration-300 group">
-            <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-emerald-500/20 transition-colors">
-              <Clock className="w-5 h-5 text-emerald-400" />
-            </div>
-            <p className="text-2xl font-bold text-white">
-              {files.reduce((acc, f) => acc + parseFloat(f.size), 0).toFixed(2)} KB
-            </p>
-            <p className="text-gray-500 text-sm">Total Size</p>
-          </div>
-          
-          <div className="bg-[#14141a] border border-white/5 rounded-xl p-5 text-center hover:border-green-500/30 transition-all duration-300 group">
-            <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-blue-500/20 transition-colors">
-              <Shield className="w-5 h-5 text-blue-400" />
-            </div>
-            <p className="text-2xl font-bold text-white">Secure</p>
-            <p className="text-gray-500 text-sm">Verified Downloads</p>
-          </div>
-
-          <div className="bg-[#14141a] border border-white/5 rounded-xl p-5 text-center hover:border-green-500/30 transition-all duration-300 group">
-            <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-500/20 transition-colors">
-              <File className="w-5 h-5 text-purple-400" />
-            </div>
-            <p className="text-2xl font-bold text-white">Latest</p>
-            <p className="text-gray-500 text-sm">Updated Version</p>
-          </div>
-        </div> */}
-
         {/* File Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {files.map((file) => (
@@ -114,7 +77,6 @@ export default function Addon() {
                       <span className="w-1 h-1 rounded-full bg-gray-700"></span>
                       <span className="text-gray-400">{file.size}</span>
                       <span className="w-1 h-1 rounded-full bg-gray-700"></span>
-                      <span className="text-green-400 text-xs">✓ Verified</span>
                     </div>
                   </div>
 

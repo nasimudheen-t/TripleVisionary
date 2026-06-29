@@ -71,28 +71,27 @@ export default function Hero({ onPageChange }) {
               className="flex items-center gap-2 mb-4"
             ></motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.1,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="text-5xl md:text-7xl font-bold font-display tracking-tight leading-none mb-6 text-white"
-            >
-              TripleVisionary Multidisciplinary Creative studio
-            </motion.h1>
-
+           <motion.h1
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{
+    duration: 0.8,
+    delay: 0.1,
+    ease: [0.16, 1, 0.3, 1],
+  }}
+  className="text-4xl sm:text-5xl md:text-7xl font-bold font-display tracking-tight leading-[1.15] md:leading-none mb-6 text-white break-words"
+>
+  TripleVisionary <br className="sm:hidden" />
+  Multidisciplinary <br className="sm:hidden" />
+  Creative Studio
+</motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-base md:text-lg text-[#C6D3E1] leading-relaxed mb-8 max-w-xl font-light"
             >
-              Where creativity meets innovation. We transform ideas into visual
-              masterpieces through cutting-edge video production, motion
-              graphics, and immersive 3D animations.
+             Ideas into visual masterpieces video production, motion graphics, vfx and 3d animation
             </motion.p>
 
             <motion.div
