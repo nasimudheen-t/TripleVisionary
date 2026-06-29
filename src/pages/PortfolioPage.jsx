@@ -179,7 +179,7 @@ export default function PortfolioPage({ onPageChange }) {
         {/* Projects Grid */}
         <motion.div
           layout
-          className=" w-full columns-1 gap-0 sm:mt-5 sm:columns-2 md:columns-3 xl:columns-4"
+          className="mt-15 sm:mt-0 w-full columns-1 gap-0 sm:columns-2 md:columns-3 xl:columns-4"
         >
           <AnimatePresence mode="popLayout">
             {visibleProjects.map((project, index) => (
@@ -227,7 +227,7 @@ export default function PortfolioPage({ onPageChange }) {
                         className={
                           project.addon?.available
                             ? "text-[#0E7A0D]"
-                            : "text-red-500"
+                            : "text-white"
                         }
                       />
                     </button>

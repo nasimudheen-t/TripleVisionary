@@ -55,8 +55,8 @@ export default function Hero({ onPageChange }) {
           backgroundImage: `url('/assets/Hero.jpg')`,
         }}
       >
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+        {/* Dark overlay - reduced opacity for mobile */}
+        <div className="absolute inset-0 bg-black/50 md:bg-black/70 backdrop-blur-[2px]" />
 
         {/* Background radial highlight */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00D4FF]/5 rounded-full blur-[120px] pointer-events-none" />
@@ -111,17 +111,18 @@ export default function Hero({ onPageChange }) {
           backgroundImage: "url('/assets/Hero.jpg')",
         }}
       >
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+        {/* Dark Overlay - reduced opacity for mobile */}
+        <div className="absolute inset-0 bg-black/50 md:bg-black/70 backdrop-blur-[2px]" />
 
         {/* Same Blue Glow */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,212,255,0.08),transparent_70%)]" />
 
         {/* Left Fade */}
-        <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-40 bg-gradient-to-r from-[#05080d] via-[#05080d]/80 to-transparent" />
+     {/* Left Fade */}
+<div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-12 sm:w-20 md:w-32 lg:w-40 bg-gradient-to-r from-[#05080d] via-[#05080d]/60 to-transparent" />
 
-        {/* Right Fade */}
-        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-40 bg-gradient-to-l from-[#05080d] via-[#05080d]/80 to-transparent" />
+{/* Right Fade */}
+<div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-12 sm:w-20 md:w-32 lg:w-40 bg-gradient-to-l from-[#05080d] via-[#05080d]/60 to-transparent" />
         <div className="relative z-10 py-5">
           <div className="marquee">
             <div className="marquee-content">
@@ -148,35 +149,35 @@ export default function Hero({ onPageChange }) {
             </div>
           </div>
         </div>
-        {/* Statement Section */}
+        {/* Statement Section - Reduced size by 20% */}
    <motion.div
   initial={{ opacity: 0, y: 40 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
   viewport={{ once: true }}
-  className="relative z-30 px-6 py-16"
+  className="relative z-30 px-4 md:px-6 py-8 md:py-16"
 >
-  <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 text-center md:flex-row md:justify-center md:text-left">
-    {/* Anti AI Image */}
-    <div className="relative flex-shrink-0">
+  <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 md:gap-6 text-center md:flex-row md:justify-center md:text-left">
+    {/* Anti AI Image - Reduced size by 20% */}
+    <div className="relative flex-shrink-0 scale-90 md:scale-100">
       <div className="absolute inset-1 rounded-full bg-green-500" />
       <div className="absolute inset-1 rounded-full bg-green-400 blur-xl opacity-80" />
-      <div className="absolute inset-0 rounded-full border-2 border-green-400 shadow-[0_0_40px_rgba(34,197,94,0.9)]" />
+      <div className="absolute inset-0 rounded-full border-2 border-green-400 shadow-[0_0_30px_rgba(34,197,94,0.9)] md:shadow-[0_0_40px_rgba(34,197,94,0.9)]" />
 
       <img
         src="/assets/fukk-ai.png"
         alt="Anti AI"
-        className="relative z-10 h-20 w-20 rounded-full object-cover md:h-24 md:w-24"
+        className="relative z-10 h-16 w-16 rounded-full object-cover md:h-20 md:w-20 lg:h-[4.8rem] lg:w-[4.8rem]"
       />
     </div>
 
-    {/* Text */}
+    {/* Text - Reduced size by 20% */}
     <div className="max-w-xl">
-      <h3 className="text-lg font-bold uppercase leading-tight tracking-tight text-white md:text-2xl lg:text-xl">
+      <h3 className="text-base md:text-lg lg:text-xl font-bold uppercase leading-tight tracking-tight text-white">
         We are free from AI generated imaginary
       </h3>
 
-      <span className="mt-2 block bg-gradient-to-r from-white via-[#8EEBFF] to-[#00ff0d] bg-clip-text text-xl font-extrabold text-transparent md:text-4xl lg:text-3xl">
+      <span className="mt-1 md:mt-2 block bg-gradient-to-r from-white via-[#8EEBFF] to-[#00ff0d] bg-clip-text text-lg md:text-2xl lg:text-3xl font-extrabold text-transparent">
         100% Human made content
       </span>
     </div>

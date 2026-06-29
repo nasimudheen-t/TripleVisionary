@@ -20,7 +20,6 @@ export const categories = [
   { name: "Graphic Designs", icon: Palette },
   { name: "UI/UX", icon: MonitorSmartphone },
   { name: "Color Grading", icon: Palette },
-  { name: "UI/UX", icon: MonitorSmartphone },
 ];
 
 export const projects = [
@@ -96,7 +95,7 @@ export const projects = [
     format: "HD",
     featured: false,
     type: "image",
-     addon: {
+    addon: {
       available: true,
       assetId: "b2",
     },
@@ -199,7 +198,7 @@ export const projects = [
     format: "HD",
     featured: false,
     type: "video",
-    videoUrl: "https://www.youtube.com/shorts/Vi555TCYzOk?is=hrbkJLXq4rlyYZ7W",
+    videoUrl: "https://www.youtube.com/watch?v=Vi555TCYzOk",
   },
   {
     id: 14,
@@ -227,7 +226,6 @@ export const assetData = [
     year: "2026",
     downloadLink: "https://t.me/triplevisionaryarchive/13",
   },
-
 ];
 
 export const softwareList = [
