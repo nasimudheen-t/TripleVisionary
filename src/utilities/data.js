@@ -214,6 +214,20 @@ export const projects = [
     type: "image",
     // videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
   },
+  {
+    id: 14,
+    title: "Signal / Noise",
+    subtitle: "Editorial title treatment",
+    category: "3D",
+    image: "/assets/Projects/image14.jpg",
+    accent: "#C99BFF",
+    year: "2025",
+    duration: "00:38",
+    format: "2K",
+    featured: false,
+    type: "image",
+    // videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  },
 ];
 
 export const assetData = [

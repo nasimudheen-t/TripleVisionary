@@ -150,35 +150,35 @@ export default function Hero({ onPageChange }) {
           </div>
         </div>
         {/* Statement Section - Reduced size by 20% */}
-   <motion.div
+ <motion.div
   initial={{ opacity: 0, y: 40 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
   viewport={{ once: true }}
-  className="relative z-30 px-4 md:px-6 py-8 md:py-16"
+  className="fixed bottom-4 right-4 z-50 md:bottom-6 md:right-6 lg:bottom-8 lg:right-8"
 >
-  <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 md:gap-6 text-center md:flex-row md:justify-center md:text-left">
-    {/* Anti AI Image - Reduced size by 20% */}
-    <div className="relative flex-shrink-0 scale-90 md:scale-100">
-      <div className="absolute inset-1 rounded-full bg-green-500" />
-      <div className="absolute inset-1 rounded-full bg-green-400 blur-xl opacity-80" />
-      <div className="absolute inset-0 rounded-full border-2 border-green-400 shadow-[0_0_30px_rgba(34,197,94,0.9)] md:shadow-[0_0_40px_rgba(34,197,94,0.9)]" />
+  <div className="flex items-center gap-2 md:gap-3 bg-black/80 backdrop-blur-md rounded-full px-3 py-2 md:px-4 md:py-2.5 border border-green-500/30 shadow-lg shadow-green-500/20">
+    {/* Anti AI Image - Smaller size */}
+    <div className="relative flex-shrink-0">
+      <div className="absolute inset-0.5 rounded-full bg-green-500" />
+      <div className="absolute inset-0.5 rounded-full bg-green-400 blur-md opacity-70" />
+      <div className="absolute inset-0 rounded-full border border-green-400 shadow-[0_0_15px_rgba(34,197,94,0.6)]" />
 
       <img
         src="/assets/fukk-ai.png"
         alt="Anti AI"
-        className="relative z-10 h-16 w-16 rounded-full object-cover md:h-20 md:w-20 lg:h-[4.8rem] lg:w-[4.8rem]"
+        className="relative z-10 h-8 w-8 rounded-full object-cover md:h-10 md:w-10 lg:h-12 lg:w-12"
       />
     </div>
 
-    {/* Text - Reduced size by 20% */}
-    <div className="max-w-xl">
-      <h3 className="text-base md:text-lg lg:text-xl font-bold uppercase leading-tight tracking-tight text-white">
-        We are free from AI generated imaginary
+    {/* Text - Smaller and condensed */}
+    <div className="flex flex-col leading-tight">
+      <h3 className="text-[10px] md:text-xs lg:text-sm font-bold uppercase tracking-tight text-white whitespace-nowrap">
+        Free from AI
       </h3>
 
-      <span className="mt-1 md:mt-2 block bg-gradient-to-r from-white via-[#8EEBFF] to-[#00ff0d] bg-clip-text text-lg md:text-2xl lg:text-3xl font-extrabold text-transparent">
-        100% Human made content
+      <span className="bg-gradient-to-r from-white via-[#8EEBFF] to-[#00ff0d] bg-clip-text text-[11px] md:text-sm lg:text-base font-extrabold text-transparent whitespace-nowrap">
+        We are free from ai
       </span>
     </div>
   </div>
