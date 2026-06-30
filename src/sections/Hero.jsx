@@ -173,12 +173,12 @@ export default function Hero({ onPageChange }) {
 
     {/* Text - Smaller and condensed */}
     <div className="flex flex-col leading-tight">
-      <h3 className="text-[10px] md:text-xs lg:text-sm font-bold uppercase tracking-tight text-white whitespace-nowrap">
+      {/* <h3 className="text-[10px] md:text-xs lg:text-sm font-bold uppercase tracking-tight text-white whitespace-nowrap">
         Free from AI
-      </h3>
+      </h3> */}
 
       <span className="bg-gradient-to-r from-white via-[#8EEBFF] to-[#00ff0d] bg-clip-text text-[11px] md:text-sm lg:text-base font-extrabold text-transparent whitespace-nowrap">
-        We are free from ai
+       We are free from ai generated imaginary
       </span>
     </div>
   </div>
