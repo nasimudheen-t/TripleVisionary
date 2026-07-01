@@ -160,9 +160,28 @@ export const projects = [
     id: 16,
     category: "3D",
     image: "/assets/Projects/image15.jpg",
+     year: "2026",
     featured: false,
     type: "video",
     videoUrl: "https://youtu.be/M4fPpJ7GrEA",
+  },
+   {
+    id: 17,
+    category: "3D",
+    image: "/assets/Projects/image16.png",
+     year: "2026",
+    featured: false,
+    type: "image",
+    // videoUrl: "https://youtu.be/M4fPpJ7GrEA",
+  },
+  {
+    id: 18,
+    category: "Graphic Designs",
+    image: "/assets/Projects/image17.jpg",
+     year: "2026",
+    featured: false,
+    type: "image",
+    // videoUrl: "https://youtu.be/M4fPpJ7GrEA",
   },
 ];
 

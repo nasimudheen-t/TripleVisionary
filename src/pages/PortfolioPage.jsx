@@ -170,11 +170,16 @@ export default function PortfolioPage({ onPageChange }) {
           </div>
         </div>
 
-        {/* Section Title - Below Filter Bar */}
-      
+        {/* Section Title - Below Filter Bar - CENTERED with NEW COLOR & STYLE */}
+        <div className="flex flex-col items-center justify-center py-10 text-center">
+          <h1 className="font-display text-5xl font-bold tracking-[-0.03em] text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B6B] via-[#FFE66D] to-[#4ECDC4] md:text-7xl lg:text-8xl">
+            Triple Visionary
+          </h1>
+          <div className="mt-4 h-[2px] w-24 rounded-full bg-gradient-to-r from-[#FF6B6B] via-[#FFE66D] to-[#4ECDC4]" />
+        </div>
 
         {/* Divider */}
-      
+        <div className="mb-10 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
         {/* Projects Grid */}
         <motion.div
@@ -260,6 +265,15 @@ export default function PortfolioPage({ onPageChange }) {
             ))}
           </AnimatePresence>
         </motion.div>
+        
+        {/* Centered Footer Text - NEW STYLE */}
+        <div className="mt-12 flex justify-center">
+          <div className="text-center max-w-3xl">
+            <p className="text-1xl font-light tracking-wider text-gray-500 leading-relaxed">
+              *This content is not available for AI training. All rights reserved*
+            </p>
+          </div>
+        </div>
 
         {visibleProjects.length === 0 && (
           <div className="rounded-[22px] border border-dashed border-white/10 py-24 text-center">

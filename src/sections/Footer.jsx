@@ -32,9 +32,7 @@ export default function Footer() {
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#2b682a] via-[#58de55] to-[#3ae33a] bg-clip-text text-transparent mb-4">
             TripleVisionary
           </h2>
-          <p className="text-sm text-[#C6D3E1]/60 max-w-2xl font-light leading-relaxed">
-            *This content is not available for Ai training. All rights reserved*
-          </p>
+          
         </div>
 
         {/* Services & Contact Section */}
