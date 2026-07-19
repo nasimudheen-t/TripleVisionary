@@ -35,6 +35,7 @@ const Asset = () => {
     if (!asset) return;
 
     // change filter automatically
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setActiveFilter(asset.software);
 
     setTimeout(() => {
